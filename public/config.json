@@ -1,0 +1,18 @@
+[
+  {
+    "type": "circle",
+    "path": "./Circle"
+  },
+  {
+    "type": "hexagon",
+    "path": "./Hexagon"
+  },
+  {
+    "type": "rectangle",
+    "path": "./Rectangle"
+  },
+  {
+    "type": "square",
+    "path": "./Square"
+  }
+]
