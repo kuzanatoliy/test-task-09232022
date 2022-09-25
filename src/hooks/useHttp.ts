@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 
-export const useHttp = (url: string) => {
+export const useHttp = <R extends {} = {}, E extends {} = {}>(url: string) => {
   const [isLoading, setIsLoading] = useState(true);
-  const data = useRef<any>(null);
-  const error = useRef<any>(null);
+  const data = useRef<R | null>(null);
+  const error = useRef<E | null>(null);
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
