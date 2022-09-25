@@ -1,18 +1,22 @@
 [
   {
+    "id": 1,
     "type": "circle",
-    "path": "./Circle"
+    "path": "Circle"
   },
   {
+    "id": 2,
     "type": "hexagon",
-    "path": "./Hexagon"
+    "path": "Hexagon"
   },
   {
+    "id": 3,
     "type": "rectangle",
-    "path": "./Rectangle"
+    "path": "Rectangle"
   },
   {
+    "id": 4,
     "type": "square",
-    "path": "./Square"
+    "path": "Square"
   }
 ]

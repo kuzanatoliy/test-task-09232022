@@ -1,3 +1,3 @@
 export const CIRCLE = "CIRCLE";
 
-export const Circle = () => <div>{CIRCLE}</div>;
+export default () => <div>{CIRCLE}</div>;
