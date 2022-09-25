@@ -2,21 +2,31 @@
   {
     "id": 1,
     "type": "circle",
-    "path": "Circle"
+    "radius": 2
   },
   {
     "id": 2,
     "type": "hexagon",
-    "path": "Hexagon"
+    "lineA": 5,
+    "lineB": 5,
+    "lineC": 5,
+    "lineD": 5,
+    "lineE": 5,
+    "lineF": 5
   },
   {
     "id": 3,
     "type": "rectangle",
-    "path": "Rectangle"
+    "lineA": 5,
+    "lineB": 5,
+    "lineC": 5
   },
   {
     "id": 4,
     "type": "square",
-    "path": "Square"
+    "lineA": 5,
+    "lineB": 5,
+    "lineC": 5,
+    "lineD": 5
   }
 ]

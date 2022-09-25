@@ -1,3 +1,11 @@
 export const CIRCLE = "CIRCLE";
 
-export default () => <div>{CIRCLE}</div>;
+export interface ICircleProps {
+  radius: number;
+}
+
+export default ({ radius }: ICircleProps) => (
+  <div>
+    Component: {CIRCLE} with radius {radius}
+  </div>
+);
