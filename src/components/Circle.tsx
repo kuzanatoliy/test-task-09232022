@@ -6,6 +6,6 @@ export interface ICircleProps {
 
 export default ({ radius }: ICircleProps) => (
   <div>
-    Component: {CIRCLE} with radius {radius}
+    Component {CIRCLE} with radius {radius}
   </div>
 );

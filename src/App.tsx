@@ -7,6 +7,7 @@ import {
   DynamicComponents,
   IDCPlagin,
 } from "./DynamicComponents/DynamicComponents";
+import { DynamicComponentsView } from "./DynamicComponents/DynamicComponentView";
 
 const plagins: IDCPlagin[] = [
   {
@@ -28,17 +29,18 @@ const plagins: IDCPlagin[] = [
 ];
 
 function App() {
-  return <DynamicComponents plagins={plagins}>Bugaga</DynamicComponents>;
-  /*const { isLoading, data, error } = useHttp<ConfigItem[]>("/config.json");
+  const { isLoading, data, error } = useHttp<ConfigItem[]>("/config.json");
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      {data &&
-        data.map((item: ConfigItem) => {
-          const Component = lazy(() => import(`./components/${item.path}`));
-          return <Component key={item.id} />;
-        })}
-    </Suspense>
-  );*/
+    <DynamicComponents plagins={plagins}>
+      <Suspense fallback={<div>Loading...</div>}>
+        {!isLoading &&
+          data &&
+          data.map((item: ConfigItem) => (
+            <DynamicComponentsView key={item.id} {...item} />
+          ))}
+      </Suspense>
+    </DynamicComponents>
+  );
 }
 
 export default App;

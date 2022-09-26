@@ -9,6 +9,6 @@ export interface ISquareProps {
 
 export default ({ lineA, lineB, lineC, lineD }: ISquareProps) => (
   <div>
-    Component {SQUARE} with {lineA} {lineB} {lineC} {lineD}
+    Component {SQUARE} with {lineA} {lineB} {lineC} {lineD} sides
   </div>
 );

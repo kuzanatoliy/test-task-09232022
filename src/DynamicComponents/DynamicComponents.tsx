@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, useState, lazy, ReactNode, ComponentType } from "react";
 
 export interface IDCPlagin {
   type: string;
@@ -10,14 +10,30 @@ export interface IDynamicComponetsProps {
   plagins: IDCPlagin[];
 }
 
-export const DynamicComponentsContext = createContext({});
+export interface IDynamicComponentsContext {
+  components: Record<string, ComponentType<any>>;
+}
+
+export const DynamicComponentsContext =
+  createContext<IDynamicComponentsContext>({ components: {} });
 
 export const DynamicComponents = ({
   plagins,
   children,
 }: IDynamicComponetsProps) => {
+  const [components] = useState(() => {
+    const state: IDynamicComponentsContext["components"] = {};
+    plagins.forEach(
+      (item) =>
+        (state[item.type] = lazy(
+          () => import(`../components/${item.component}`)
+        ))
+    );
+    return state;
+  });
+
   return (
-    <DynamicComponentsContext.Provider value={{}}>
+    <DynamicComponentsContext.Provider value={{ components }}>
       {children}
     </DynamicComponentsContext.Provider>
   );

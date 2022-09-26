@@ -18,7 +18,7 @@ export default ({
   lineF,
 }: IHexagonProps) => (
   <div>
-    Component {HEXAGON} with {lineA} {lineB} {lineC} {lineD} {lineE}
-    {lineF} sides
+    Component {HEXAGON} with {lineA} {lineB} {lineC} {lineD} {lineE} {lineF}{" "}
+    sides
   </div>
 );
